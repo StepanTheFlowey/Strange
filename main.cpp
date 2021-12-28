@@ -11,8 +11,8 @@ int secureMain() {
   Context* context = new Context;
   context->load();
 
-  SceneBase* scene=nullptr;
-  switch(rand()%2) {
+  SceneBase* scene = nullptr;
+  switch(rand() % 2) {
     case 0:
       scene = new SceneJevil;
       break;
@@ -28,10 +28,10 @@ int secureMain() {
 }
 
 int main() {
+  srand(static_cast<unsigned int>(time(0)));
 #ifndef DEBUG
   FreeConsole();
 #endif // DEBUG
-
   int exitcode = 0;
 
   try {
