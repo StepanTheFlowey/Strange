@@ -6,7 +6,7 @@
 
 #define JEVIL_COUNT 64
 
-class SceneJevil: public SceneBase {
+class SceneJevil : public SceneBase {
   sf::Sound music_;
   std::vector<JevilBase*> jevils_;
 public:

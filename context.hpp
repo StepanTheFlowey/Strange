@@ -21,6 +21,7 @@ class Context {
   sf::ContextSettings contextSettings_;
   sf::Context context_;
 public:
+
   sf::RenderWindow window;
   sf::VideoMode videoMode;
   sf::Event event;
@@ -28,7 +29,7 @@ public:
   sf::Clock clock;
   sf::Time time;
 
-  Context():window(), event() {
+  Context() :window(), event() {
     contextSettings_.antialiasingLevel = 0;
     contextSettings_.depthBits = 16;
     contextSettings_.stencilBits = 0;
@@ -41,7 +42,7 @@ public:
   }
 
   ~Context() {
-
+    destroy();
   }
 
   void load() {
@@ -108,7 +109,7 @@ public:
       throw Exeption(L"hMemory was NULL");
     }
 
-    texture_.emplace(id,sf::Texture());
+    texture_.emplace(id, sf::Texture());
     if(!texture_[id].loadFromMemory(LockResource(hMemory), SizeofResource(NULL, hResource))) {
       throw Exeption(L"Error loading texture from memory");
     }
