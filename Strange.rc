@@ -1,6 +1,6 @@
 // Microsoft Visual C++ generated resource script.
 //
-#include "resource.h"
+#include "resource1.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -27,7 +27,7 @@ LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
 
 1 TEXTINCLUDE 
 BEGIN
-    "resource.h\0"
+    "resource1.h\0"
 END
 
 2 TEXTINCLUDE 
@@ -45,34 +45,6 @@ END
 #endif    // APSTUDIO_INVOKED
 
 #endif    // Русский (Россия) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// Английский (США) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
-#pragma code_page(1252)
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// PNG
-//
-
-IDB_PNG1                PNG                     "jevil.png"
-
-IDB_PNG2                PNG                     "matrix.png"
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// WAVE
-//
-
-IDR_WAVE1               WAVE                    "jevil.wav"
-
-#endif    // Английский (США) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

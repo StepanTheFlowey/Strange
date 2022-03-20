@@ -84,32 +84,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Context.cpp" />
+    <ClCompile Include="Exeption.cpp" />
+    <ClCompile Include="JevilBase.cpp" />
+    <ClCompile Include="JevilDance.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneJevil.cpp" />
+    <ClCompile Include="SceneMatrix.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="jevilBase.hpp" />
-    <ClInclude Include="lera.hpp" />
-    <ClInclude Include="matrix.hpp" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="sceneBase.hpp" />
-    <ClInclude Include="context.hpp" />
-    <ClInclude Include="exeption.hpp" />
-    <ClInclude Include="jevilDance.hpp" />
-    <ClInclude Include="sceneJevil.hpp" />
-    <ClInclude Include="sceneMatrix.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Strange.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="jevil.png" />
-    <Image Include="matrix.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="jevil.wav" />
+    <ClInclude Include="Creator.hpp" />
+    <ClInclude Include="Entity.hpp" />
+    <ClInclude Include="main.hpp" />
+    <ClInclude Include="Matrix.hpp" />
+    <ClInclude Include="Scene.hpp" />
+    <ClInclude Include="Context.hpp" />
+    <ClInclude Include="Exeption.hpp" />
+    <ClInclude Include="JevilDance.hpp" />
+    <ClInclude Include="SceneJevil.hpp" />
+    <ClInclude Include="SceneMatrix.hpp" />
+    <ClInclude Include="SceneMinecraft.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Strange.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

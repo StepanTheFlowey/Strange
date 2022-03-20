@@ -3,14 +3,14 @@
 #include <iostream>
 
 class Exeption {
+  uint64_t line_;
+  std::wstring filename_;
   std::wstring description_;
 public:
 
-  Exeption(const std::wstring wstr) {
-    description_ = wstr;
-  }
+  //
+  Exeption(const std::wstring description,const std::string filename,const uint64_t line);
 
-  const std::wstring wtf() const {
-    return description_;
-  }
+  //
+  const std::wstring wtf() const;
 };

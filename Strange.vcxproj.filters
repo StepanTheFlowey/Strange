@@ -13,63 +13,80 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headers\Scenes">
+      <UniqueIdentifier>{769c973a-ec1b-4c55-9933-be3f2988eec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Scenes">
+      <UniqueIdentifier>{d7b4df51-dca7-4172-a89a-c537249b450a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="Exeption.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="JevilBase.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="JevilDance.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Context.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMatrix.cpp">
+      <Filter>Sources\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Sources\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneJevil.cpp">
+      <Filter>Sources\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="jevilBase.hpp">
+    <ClInclude Include="Entity.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="context.hpp">
+    <ClInclude Include="Context.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="sceneBase.hpp">
+    <ClInclude Include="JevilDance.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="jevilDance.hpp">
+    <ClInclude Include="Exeption.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="sceneJevil.hpp">
+    <ClInclude Include="Matrix.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="exeption.hpp">
+    <ClInclude Include="main.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="lera.hpp">
+    <ClInclude Include="Creator.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="Scene.hpp">
+      <Filter>Headers\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="sceneMatrix.hpp">
-      <Filter>Headers</Filter>
+    <ClInclude Include="SceneJevil.hpp">
+      <Filter>Headers\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="matrix.hpp">
-      <Filter>Headers</Filter>
+    <ClInclude Include="SceneMatrix.hpp">
+      <Filter>Headers\Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="SceneMinecraft.hpp">
+      <Filter>Headers\Scenes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Strange.rc">
       <Filter>Resources</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="jevil.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="matrix.png">
-      <Filter>Resources</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="jevil.wav">
-      <Filter>Resources</Filter>
-    </Media>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

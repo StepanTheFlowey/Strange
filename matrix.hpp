@@ -1,11 +1,11 @@
 #pragma once
 
-#include "context.hpp"
+#include "Context.hpp"
 
 #define MATRIX_LENGHT 32
 
 class Matrix {
-  Context* context_;
+  Context* context_=nullptr;
   sf::Sprite sprite_[MATRIX_LENGHT];
   sf::Time moveTime_;
   sf::Time updateTime_;
