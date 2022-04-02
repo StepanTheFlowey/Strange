@@ -3,7 +3,8 @@
 #include "Entity.hpp"
 
 class JevilDance : public Entity {
-  sf::Time time;
+  sf::Sprite sprite_;
+  sf::Time time_;
   float moveSpeed_;
   int16_t moveDir_;
   uint8_t phase_;
@@ -14,7 +15,7 @@ public:
 
   ~JevilDance();
 
-  virtual void create(Context* const context) override;
+  virtual void create() override;
 
   virtual void update() override;
 

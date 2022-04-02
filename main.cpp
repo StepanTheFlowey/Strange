@@ -3,26 +3,36 @@
 #include "Context.hpp"
 #include "SceneJevil.hpp"
 #include "SceneMatrix.hpp"
+#include "SceneMinecraft.hpp"
 
 int secureMain() {
-  context.load();
-  context.create();
+  context = new Context;
+  context->load();
+  context->create();
 
   Scene* scene = nullptr;
+#ifndef DEBUG
   switch(rand() % 2) {
+#else 
+  switch(2) {
+#endif // !DEBUG
     case 0:
       scene = new SceneJevil;
       break;
     case 1:
       scene = new SceneMatrix;
       break;
+    case 2:
+      scene = new SceneMinecraft;
+      break;
   }
-  scene->run(context);
+  scene->run();
   delete scene;
 
-  context.save();
-  context.destroy();
+  context->save();
+  context->destroy();
 
+  delete context;
   return EXIT_SUCCESS;
 }
 
@@ -41,13 +51,13 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 #endif // DEBUG
   srand(static_cast<unsigned int>(time(0)));
   int exitcode = 0;
-  
+
   try {
     exitcode = secureMain();
   }
   catch(Exeption exeption) {
 #ifdef DEBUG
-    std::cerr << exeption.wtf().c_str() << std::endl;
+    std::wcerr << exeption.wtf().c_str() << std::endl;
 #else
     MessageBoxW(NULL, exeption.wtf().c_str(), L"Strange", MB_ICONERROR | MB_OK);
 #endif // DEBUG
@@ -55,7 +65,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
   }
   catch(...) {
 #ifdef DEBUG
-    std::cerr << "omg shit happens\a" << std::endl;
+    std::wcerr << L"omg shit happens\a" << std::endl;
 #else
     MessageBoxW(NULL, L"omg shit happens", L"Strange", MB_ICONERROR | MB_OK);
 #endif // DEBUG

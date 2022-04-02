@@ -1,12 +1,5 @@
 #include "Scene.hpp"
 
-#include "main.hpp"
-
-inline Scene::Scene() {
-  debug(L"Scene()");
+void Scene::run() {
+  exept(L"Scene::run()!");
 }
-
-inline Scene::~Scene() {
-  debug(L"~Scene()");
-}
-

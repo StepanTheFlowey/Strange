@@ -3,7 +3,7 @@
 #include "main.hpp"
 #include <sstream>
 
-inline Exeption::Exeption(const std::wstring description, const std::string filename, const uint64_t line) {
+Exeption::Exeption(const std::wstring description, const std::string filename, const uint64_t line) {
   description_ = description;
   filename_ = wide(filename);
   line_ = line;

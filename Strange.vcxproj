@@ -85,19 +85,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Context.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Exeption.cpp" />
-    <ClCompile Include="JevilBase.cpp" />
     <ClCompile Include="JevilDance.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneJevil.cpp" />
     <ClCompile Include="SceneMatrix.cpp" />
+    <ClCompile Include="SceneMinecraft.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Creator.hpp" />
+    <ClInclude Include="Creator.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="main.hpp" />
     <ClInclude Include="Matrix.hpp" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="Context.hpp" />
     <ClInclude Include="Exeption.hpp" />
@@ -107,10 +113,16 @@
     <ClInclude Include="SceneMinecraft.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\jevil.flac" />
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Strange.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\jevil.png" />
+    <Image Include="assets\matrix.png" />
+    <Image Include="assets\minecraft.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

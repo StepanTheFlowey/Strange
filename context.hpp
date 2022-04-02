@@ -3,6 +3,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
+#include "main.hpp"
 #include "resource.h"
 #include "Exeption.hpp"
 
@@ -23,7 +24,10 @@ public:
 
   Context();
 
-  ~Context();
+  ~Context() {
+    debug(L"~Context()");
+    destroy();
+  }
 
   void load();
 
@@ -31,20 +35,32 @@ public:
 
   void create();
 
-  void destroy();
+  void destroy() {
+    window.close();
+  }
 
-  bool isActual() const;
+  bool alive() const {
+    return window.isOpen();
+  }
 
-  void autoEvent();
+  void autoEvent() {
+    if(window.pollEvent(event)) {
+      if(sf::Event::Closed == event.type) {
+        window.close();
+      }
+    }
+  }
 
-  void autoClock();
+  void autoClock() {
+    time = clock.restart();
+  }
 
   bool pollEvent();
 
-  const sf::Texture& getTexture(const uint16_t id);
+  sf::Texture* getTexture(const uint16_t id);
 
-  const sf::SoundBuffer& getSound(const uint16_t id);
+  sf::SoundBuffer* getSound(const uint16_t id);
 
-  const sf::Music& getMusic(const uint16_t id);
+  sf::Music* getMusic(const uint16_t id);
 };
-extern Context context;
+extern Context* context;

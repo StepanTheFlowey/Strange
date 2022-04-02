@@ -4,16 +4,19 @@
 #include "Scene.hpp"
 #include "Entity.hpp"
 
-#define JEVIL_COUNT 64
-
 class SceneJevil : public Scene {
-  sf::Sound music_;
+  sf::Music* music_;
   std::vector<Entity*> jevils_;
 public:
 
-  SceneJevil();
+  inline SceneJevil() {
+    debug(L"SceneJevil()");
+    jevils_.reserve(JEVIL_COUNT);
+  }
 
-  ~SceneJevil();
+  inline ~SceneJevil() {
+    debug(L"~SceneJevil()");
+  }
 
-  virtual void run(Context* const context) override;
+  virtual void run() override;
 };

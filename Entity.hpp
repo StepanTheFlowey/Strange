@@ -1,19 +1,32 @@
 #pragma once
 
+#include "main.hpp"
 #include "Context.hpp"
 
 class Entity {
 public:
 
-  Entity();
+  inline Entity() {
+    debug(L"Entity()");
+  }
 
-  ~Entity();
+  virtual inline ~Entity() {
+    debug(L"~Entity()");
+  }
 
-  virtual void create(Context* const context);
+  virtual inline void create() {
+    exept(L"Entity::create(context)!");
+  }
 
-  virtual void destroy();
+  virtual inline void destroy() {
+    exept(L"Entity::destroy()!");
+  }
 
-  virtual void update();
+  virtual inline void update() {
+    exept(L"Entity::update()!");
+  }
 
-  virtual void draw();
+  virtual inline void draw() {
+    exept(L"Entity::draw()!");
+  }
 };

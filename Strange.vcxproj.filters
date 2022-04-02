@@ -27,9 +27,6 @@
     <ClCompile Include="Exeption.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="JevilBase.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
     <ClCompile Include="JevilDance.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
@@ -43,6 +40,15 @@
       <Filter>Sources\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="SceneJevil.cpp">
+      <Filter>Sources\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMinecraft.cpp">
       <Filter>Sources\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,13 +86,28 @@
     <ClInclude Include="SceneMinecraft.hpp">
       <Filter>Headers\Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="assets\jevil.flac" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Strange.rc">
       <Filter>Resources</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\jevil.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="assets\matrix.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="assets\minecraft.png">
+      <Filter>Resources</Filter>
+    </Image>
   </ItemGroup>
 </Project>
