@@ -10,23 +10,23 @@ public:
     debug(L"Entity()");
   }
 
-  virtual inline ~Entity() {
+  inline virtual ~Entity() {
     debug(L"~Entity()");
   }
 
-  virtual inline void create() {
+  inline virtual void create() {
     exept(L"Entity::create(context)!");
   }
 
-  virtual inline void destroy() {
+  inline virtual void destroy() {
     exept(L"Entity::destroy()!");
   }
 
-  virtual inline void update() {
+  inline virtual void update() {
     exept(L"Entity::update()!");
   }
 
-  virtual inline void draw() {
+  inline virtual void draw() {
     exept(L"Entity::draw()!");
   }
 };

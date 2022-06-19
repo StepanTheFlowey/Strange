@@ -28,8 +28,9 @@ void Matrix::update() {
   updateTime_ += context->time;
   if(updateTime_.asMilliseconds() > 100) {
     updateTime_ -= sf::milliseconds(100);
-    for(uint_fast8_t i = 0; i < MATRIX_LENGHT; ++i)
+    for(uint_fast8_t i = 0; i < MATRIX_LENGHT; ++i) {
       sprite_[i].setTextureRect(sf::IntRect(rand() % 16 * 6, 0, 6, 9));
+    }
   }
 
   for(uint_fast8_t i = 0; i < MATRIX_LENGHT; ++i)

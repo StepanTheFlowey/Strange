@@ -92,7 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
-    <None Include="assets\jevil.flac" />
+    <None Include="assets\jevil.flac">
+      <Filter>Resources</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Strange.rc">

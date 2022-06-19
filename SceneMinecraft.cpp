@@ -1,14 +1,31 @@
 #include "SceneMinecraft.hpp"
 
-SceneMinecraft::Block SceneMinecraft::blocks[64]{};
-const uint16_t SceneMinecraft::blocksCount = 64;
+SceneMinecraft::Block SceneMinecraft::blocks[]{
+  { L"Air", TxPos(0,0), 0},
+  { L"Stone", TxPos(1,0), 1000},
+  { L"Granite", TxPos(2,0), 1000},
+  { L"Polished granite", TxPos(3,0), 0},
+  { L"Diorite", TxPos(4,0), 0},
+  { L"Polished diorite", TxPos(5,0), 0},
+  { L"Andesit", TxPos(6,0), 0},
+  { L"Polished andesit", TxPos(7,0), 0 },
+  { L"Grass", TxPos(8,0), 0 },
+  { L"Dirt", TxPos(9,0), 0 },
+  { L"Polished dirt", TxPos(10,0), 0 },
+  { L"Podzol", TxPos(11,0), 0 },
+  { L"Cobblestone", TxPos(12,0), 0 },
+  { L"Oak planks", TxPos(13,0), 0 },
+  { L"Polished andesit",TxPos(14,0),0 },
+  { L"Polished andesit",TxPos(15,0),0 }
+};
+const uint16_t SceneMinecraft::blocksCount = 16;
 
 SceneMinecraft::SceneMinecraft() {
-  size.x = sf::VideoMode::getDesktopMode().width / 64;
-  size.y = sf::VideoMode::getDesktopMode().height / 64;
+  size.x = sf::VideoMode::getDesktopMode().width / MINECRAFT_BLOCK_SIZE;
+  size.y = sf::VideoMode::getDesktopMode().height / MINECRAFT_BLOCK_SIZE;
   blockTotal = size.x * size.y;
 
-  verticalOffset = sf::VideoMode::getDesktopMode().height % 64;
+  verticalOffset = sf::VideoMode::getDesktopMode().height % MINECRAFT_BLOCK_SIZE;
 
   vbo_.setPrimitiveType(sf::Quads);
   vbo_.setUsage(sf::VertexBuffer::Stream);
@@ -24,24 +41,18 @@ SceneMinecraft::SceneMinecraft() {
       block.vt[2].color = sf::Color::White;
       block.vt[3].color = sf::Color::White;
 
-      block.vt[0].position.x = i * 64;
-      block.vt[0].position.y = j * 64 + verticalOffset;
+      block.vt[0].position.x = i * MINECRAFT_BLOCK_SIZE;
+      block.vt[0].position.y = j * MINECRAFT_BLOCK_SIZE + verticalOffset;
 
-      block.vt[1].position.x = i * 64;
-      block.vt[1].position.y = j * 64 + 64 + verticalOffset;
+      block.vt[1].position.x = i * MINECRAFT_BLOCK_SIZE;
+      block.vt[1].position.y = j * MINECRAFT_BLOCK_SIZE + MINECRAFT_BLOCK_SIZE + verticalOffset;
 
-      block.vt[2].position.x = i * 64 + 64;
-      block.vt[2].position.y = j * 64 + 64 + verticalOffset;
+      block.vt[2].position.x = i * MINECRAFT_BLOCK_SIZE + MINECRAFT_BLOCK_SIZE;
+      block.vt[2].position.y = j * MINECRAFT_BLOCK_SIZE + MINECRAFT_BLOCK_SIZE + verticalOffset;
 
-      block.vt[3].position.x = i * 64 + 64;
-      block.vt[3].position.y = j * 64 + verticalOffset;
-      updateBlock(BlockPos(i, j));
-    }
-  }
-
-  for(uint8_t i = 0; i < 8; ++i) {
-    for(uint8_t j = 0; j < 8; ++j) {
-      blocks[i + j * 8].txPos = sf::Vector2<uint8_t>(i, j);
+      block.vt[3].position.x = i * MINECRAFT_BLOCK_SIZE + MINECRAFT_BLOCK_SIZE;
+      block.vt[3].position.y = j * MINECRAFT_BLOCK_SIZE + verticalOffset;
+      setBlock(BlockPos(i, j), 0);
     }
   }
 }
@@ -49,7 +60,7 @@ SceneMinecraft::SceneMinecraft() {
 void SceneMinecraft::run() {
   tileset_ = context->getTexture(IDB_IMG3);
 
-  uint16_t selectedBlock = 0;
+  uint16_t selectedBlock = 1;
   while(context->alive()) {
     context->autoClock();
 
@@ -73,10 +84,9 @@ void SceneMinecraft::run() {
           break;
         }
         case sf::Event::MouseWheelScrolled:
-          selectedBlock += context->event.mouseWheelScroll.delta;
-          if(selectedBlock >= blocksCount) {
-            selectedBlock = 0;
-          }
+          selectedBlock += static_cast<int>(context->event.mouseWheelScroll.delta) % 2;
+          if(selectedBlock >= blocksCount) selectedBlock = blocksCount - 1;
+          if(selectedBlock == 0)           selectedBlock = 1;
           debug(selectedBlock << L'\t' << context->event.mouseWheelScroll.delta);
           setBlock(BlockPos(size.x, size.y - 1), selectedBlock);
           break;
@@ -84,8 +94,8 @@ void SceneMinecraft::run() {
         {
           sf::Vector2i mousePos(context->event.mouseButton.x, context->event.mouseButton.y);
           mousePos -= sf::Vector2i(0, verticalOffset);
-          mousePos.x /= 64;
-          mousePos.y /= 64;
+          mousePos.x /= MINECRAFT_BLOCK_SIZE;
+          mousePos.y /= MINECRAFT_BLOCK_SIZE;
           setBlock(BlockPos(mousePos), selectedBlock);
           break;
         }

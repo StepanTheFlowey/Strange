@@ -11,10 +11,12 @@ Exeption::Exeption(const std::wstring description, const std::string filename, c
 
 const std::wstring Exeption::wtf() const {
   std::wstringstream out;
-  out << L"wtf():" << std::endl;
-  out << L"Problem: " << description_ << std::endl;
-  out << L"File: " << filename_ << std::endl;
-  out << L"Line: " << line_ << std::endl;
+  
+  out << L"wtf():\n";
+  out << L"Problem:\t" << description_ << L'\n';
+  out << L"File:\t" << filename_ << L'\n';
+  out << L"Line:\t" << line_ << L'\n';
   out << L"Please contact app vendor" << std::endl;
+
   return out.str();
 }

@@ -2,6 +2,7 @@
 
 JevilDance::JevilDance() {
   debug(L"JevilDance()");
+
   moveSpeed_ = 0.8F + static_cast<float>(rand() % 5) / 10.0F;
   moveDir_ = rand() % 360;
   phase_ = rand() % 8;
@@ -9,9 +10,7 @@ JevilDance::JevilDance() {
 }
 
 JevilDance::~JevilDance() {
-#ifdef DEBUG
-  std::wcout << L"~JevilDance()" << std::endl;
-#endif // DEBUG
+  debug(L"~JevilDance()");
 }
 
 void JevilDance::create() {

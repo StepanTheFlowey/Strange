@@ -8,6 +8,7 @@
 #include "Exeption.hpp"
 
 class Context {
+  std::map<uint16_t, sf::Font> font_;
   std::map<uint16_t, sf::Texture> texture_;
   std::map<uint16_t, sf::SoundBuffer> audio_;
   std::map<uint16_t, sf::Music> music_;
@@ -56,6 +57,8 @@ public:
   }
 
   bool pollEvent();
+
+  sf::Font* getFont(const uint16_t id);
 
   sf::Texture* getTexture(const uint16_t id);
 

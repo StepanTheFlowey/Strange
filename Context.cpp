@@ -11,6 +11,7 @@ Context* context = nullptr;
 
 Context::Context() : window(), event() {
   debug(L"Context()");
+
   contextSettings_.antialiasingLevel = 0;
   contextSettings_.depthBits = 16;
   contextSettings_.majorVersion = 2;
@@ -44,6 +45,28 @@ bool Context::pollEvent() {
     return true;
   }
   return false;
+}
+
+sf::Font* Context::getFont(const uint16_t id) {
+  const auto& iterator = font_.find(id);
+  if(iterator != font_.end()) {
+    return &iterator->second;
+  }
+
+  HRSRC hResource = FindResourceW(NULL, MAKEINTRESOURCEW(id), L"FON");
+  if(!hResource) {
+    exept(L"!hResource");
+  }
+  HGLOBAL hMemory = LoadResource(NULL, hResource);
+  if(!hMemory) {
+    exept(L"!hMemory");
+  }
+
+  font_[id];
+  if(!font_[id].loadFromMemory(LockResource(hMemory), SizeofResource(NULL, hResource))) {
+    exept(L"!texture_[id].loadFromMemory(...)");
+  }
+  return &font_[id];
 }
 
 sf::Texture* Context::getTexture(const uint16_t id) {

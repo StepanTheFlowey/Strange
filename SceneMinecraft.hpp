@@ -4,11 +4,12 @@
 #include <SFML\Graphics.hpp>
 
 using BlockPos = sf::Vector2<uint16_t>;
+using TxPos = sf::Vector2<uint16_t>;
 
 class SceneMinecraft : public Scene {
   struct Block {
     std::wstring name;
-    sf::Vector2<uint8_t> txPos;
+    TxPos txPos;
     uint16_t breakTime;
   };
 

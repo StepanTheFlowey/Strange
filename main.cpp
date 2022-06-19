@@ -12,7 +12,7 @@ int secureMain() {
 
   Scene* scene = nullptr;
 #ifndef DEBUG
-  switch(rand() % 2) {
+  switch(rand() % 3) {
 #else 
   switch(2) {
 #endif // !DEBUG
