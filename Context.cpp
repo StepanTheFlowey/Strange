@@ -3,7 +3,7 @@
 #include <iostream>
 #include <filesystem>
 #include <Windows.h>
-#include <Dwmapi.h>
+#include <dwmapi.h>
 
 namespace fs = std::filesystem;
 
@@ -13,7 +13,6 @@ Context::Context() : window(), event() {
   debug(L"Context()");
 
   contextSettings_.antialiasingLevel = 0;
-  contextSettings_.depthBits = 16;
   contextSettings_.majorVersion = 2;
   contextSettings_.minorVersion = 1;
 

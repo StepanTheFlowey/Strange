@@ -22,7 +22,9 @@ public:
 
   virtual void create() override;
 
-  virtual void update()override;
+  virtual void destroy() override;
+
+  virtual void update() override;
 
   virtual void draw() override;
 };

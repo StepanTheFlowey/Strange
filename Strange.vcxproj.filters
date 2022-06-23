@@ -51,6 +51,9 @@
     <ClCompile Include="SceneMinecraft.cpp">
       <Filter>Sources\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.hpp">
@@ -87,6 +90,9 @@
       <Filter>Headers\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

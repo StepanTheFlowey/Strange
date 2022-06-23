@@ -5,7 +5,7 @@
 #include "Entity.hpp"
 
 class SceneJevil : public Scene {
-  sf::Music* music_;
+  sf::Music* music_ = nullptr;
   std::vector<Entity*> jevils_;
 public:
 

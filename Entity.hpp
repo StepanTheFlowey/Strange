@@ -6,27 +6,19 @@
 class Entity {
 public:
 
-  inline Entity() {
+  Entity() {
     debug(L"Entity()");
   }
 
-  inline virtual ~Entity() {
+  virtual ~Entity() {
     debug(L"~Entity()");
   }
 
-  inline virtual void create() {
-    exept(L"Entity::create(context)!");
-  }
+  virtual void create() = 0;
 
-  inline virtual void destroy() {
-    exept(L"Entity::destroy()!");
-  }
+  virtual void destroy() = 0;
 
-  inline virtual void update() {
-    exept(L"Entity::update()!");
-  }
+  virtual void update() = 0;
 
-  inline virtual void draw() {
-    exept(L"Entity::draw()!");
-  }
+  virtual void draw() = 0;
 };

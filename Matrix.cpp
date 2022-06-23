@@ -6,11 +6,15 @@ void Matrix::create() {
 
   uint8_t color;
   for(uint_fast8_t i = 0; i < MATRIX_LENGHT; ++i) {
-    sprite_[i].setTexture(*context->getTexture(IDB_IMG2));
+    sprite_[i].setTexture(*context->getTexture(ID_IMG2));
     color = 256 / MATRIX_LENGHT * i;
     sprite_[i].setColor(sf::Color(color, color, color));
     sprite_[i].setScale(2.0F, 2.0F);
   }
+}
+
+void Matrix::destroy() {
+
 }
 
 void Matrix::update() {
@@ -33,11 +37,13 @@ void Matrix::update() {
     }
   }
 
-  for(uint_fast8_t i = 0; i < MATRIX_LENGHT; ++i)
+  for(uint_fast8_t i = 0; i < MATRIX_LENGHT; ++i) {
     sprite_[i].setPosition(sf::Vector2f(position_) + sf::Vector2f(0, i * 18));
+  }
 }
 
 void Matrix::draw() {
-  for(uint_fast8_t i = 0; i < MATRIX_LENGHT; ++i)
+  for(uint_fast8_t i = 0; i < MATRIX_LENGHT; ++i) {
     context->window.draw(sprite_[i]);
+  }
 }

@@ -2,7 +2,7 @@
 
 #include "Entity.hpp"
 
-class JevilDance : public Entity {
+class EntityJevil : public Entity {
   sf::Sprite sprite_;
   sf::Time time_;
   float moveSpeed_;
@@ -11,11 +11,13 @@ class JevilDance : public Entity {
   bool side_;
 public:
 
-  JevilDance();
+  EntityJevil();
 
-  ~JevilDance();
+  ~EntityJevil();
 
   virtual void create() override;
+
+  virtual void destroy() override;
 
   virtual void update() override;
 

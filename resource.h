@@ -2,10 +2,10 @@
 // Включаемый файл, созданный в Microsoft Visual C++.
 // Используется Strange.rc
 //
-#define IDB_IMG1                        103
-#define IDB_IMG2                        104
-#define IDB_IMG3                        105
-#define IDR_MUS1                        106
+#define ID_IMG1                        101
+#define ID_IMG2                        102
+#define ID_IMG3                        103
+#define ID_MUS1                        104
 
 // Next default values for new objects
 // 

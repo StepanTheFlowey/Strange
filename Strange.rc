@@ -60,9 +60,9 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // IMG
 //
 
-IDB_IMG1                IMG                     "assets\\jevil.png"
-IDB_IMG2                IMG                     "assets\\matrix.png"
-IDB_IMG3                IMG                     "assets\\minecraft.png"
+ID_IMG1                 IMG                     "assets\\jevil.png"
+ID_IMG2                 IMG                     "assets\\matrix.png"
+ID_IMG3                 IMG                     "assets\\minecraft.png"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -70,7 +70,7 @@ IDB_IMG3                IMG                     "assets\\minecraft.png"
 // MUS
 //
 
-IDR_MUS1                MUS                     "assets\\jevil.flac"
+ID_MUS1                 MUS                     "assets\\jevil.flac"
 
 #endif    // Английский (США) resources
 /////////////////////////////////////////////////////////////////////////////

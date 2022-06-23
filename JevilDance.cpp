@@ -1,7 +1,7 @@
 #include "JevilDance.hpp"
 
-JevilDance::JevilDance() {
-  debug(L"JevilDance()");
+EntityJevil::EntityJevil() {
+  debug(L"EntityJevil()");
 
   moveSpeed_ = 0.8F + static_cast<float>(rand() % 5) / 10.0F;
   moveDir_ = rand() % 360;
@@ -9,12 +9,12 @@ JevilDance::JevilDance() {
   side_ = rand() % 2;
 }
 
-JevilDance::~JevilDance() {
-  debug(L"~JevilDance()");
+EntityJevil::~EntityJevil() {
+  debug(L"~EntityJevil()");
 }
 
-void JevilDance::create() {
-  sprite_.setTexture(*context->getTexture(IDB_IMG1));
+void EntityJevil::create() {
+  sprite_.setTexture(*context->getTexture(ID_IMG1));
   sprite_.setPosition(
     static_cast<float>(rand() % context->videoMode.width),
     static_cast<float>(rand() % context->videoMode.height)
@@ -25,7 +25,9 @@ void JevilDance::create() {
   sprite_.setTextureRect(sf::IntRect(phase_ * 46, side_ * 48, 46, 48));
 }
 
-void JevilDance::update() {
+void EntityJevil::destroy() {}
+
+void EntityJevil::update() {
   sf::Vector2f pos = sprite_.getPosition();
 
   if(pos.x < 0 || pos.x > context->videoMode.width || pos.y < 0 || pos.y > context->videoMode.height) {
@@ -56,7 +58,7 @@ void JevilDance::update() {
   }
 }
 
-void JevilDance::draw() {
+void EntityJevil::draw() {
   context->window.draw(sprite_);
 #ifdef DEBUG
   sf::Vertex vt[2];
