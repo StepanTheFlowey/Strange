@@ -2,15 +2,9 @@
 
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
+
 #include <iostream>
 #include <Windows.h>
-
-#define JEVIL_COUNT 64
-
-#define MATRIX_COUNT 64
-#define MATRIX_LENGHT 32
-
-#define MINECRAFT_BLOCK_SIZE 32
 
 constexpr double PI = 3.1415926535897932384626433832795;
 constexpr double RAD_TO_DEG = 57.295779513082320876798154814105;
@@ -32,6 +26,10 @@ constexpr float F_DEG_TO_RAD = 0.01745329251994329576923690768489F;
 
 #define exept(str) throw Exeption(str, __FILE__, __LINE__)
 
-std::wstring wide(const std::string string);
+inline std::wstring wide(const std::string string) {
+  return std::wstring(string.begin(), string.end());
+}
 
-std::string shrink(const std::wstring wstring);
+inline std::string shrink(const std::wstring wstring) {
+  return std::string(wstring.begin(), wstring.end());
+}

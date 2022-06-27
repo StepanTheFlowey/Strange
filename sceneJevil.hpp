@@ -4,6 +4,8 @@
 #include "Scene.hpp"
 #include "Entity.hpp"
 
+#define JEVIL_COUNT 64
+
 class SceneJevil : public Scene {
   sf::Music* music_ = nullptr;
   std::vector<Entity*> jevils_;

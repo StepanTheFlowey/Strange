@@ -36,14 +36,6 @@ int secureMain() {
   return EXIT_SUCCESS;
 }
 
-std::wstring wide(const std::string string) {
-  return std::wstring(string.begin(), string.end());
-}
-
-std::string shrink(const std::wstring wstring) {
-  return std::string(wstring.begin(), wstring.end());
-}
-
 #ifdef DEBUG
 int main() {
 #else

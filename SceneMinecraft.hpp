@@ -3,6 +3,8 @@
 #include "Scene.hpp"
 #include <SFML\Graphics.hpp>
 
+#define MINECRAFT_BLOCK_SIZE 32
+
 class SceneMinecraft : public Scene {
 public:
 

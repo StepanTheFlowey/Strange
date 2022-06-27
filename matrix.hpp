@@ -3,6 +3,8 @@
 #include "Context.hpp"
 #include "Entity.hpp"
 
+#define MATRIX_LENGHT 32
+
 class Matrix : public Entity {
   sf::Sprite sprite_[MATRIX_LENGHT];
   sf::Time moveTime_;
